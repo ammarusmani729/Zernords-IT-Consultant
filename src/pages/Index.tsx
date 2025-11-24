@@ -73,7 +73,7 @@ const Index = () => {
   ];
 
   const brands = [
-    "MechPlus Trading", "Maxior Perfumes", "MechPlus Duck Cleaning", "All About Cell"
+    "MechPlus Trading", "Maxior Perfumes", "MechPlus Duct Cleaning", "All About Cell"
   ];
 
   return (
@@ -121,8 +121,8 @@ const Index = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
             {[
-              { icon: Award, label: "Years Experience", value: "2+" },
-              { icon: Users, label: "Happy Clients", value: "10+" },
+              { icon: Award, label: "Years Experience", value: "10+" },
+              { icon: Users, label: "Happy Clients", value: "20+" },
               { icon: TrendingUp, label: "Projects Completed", value: "20+" },
               { icon: Sparkles, label: "Success Rate", value: "95%" },
             ].map((stat, index) => (

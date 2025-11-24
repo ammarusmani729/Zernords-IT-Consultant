@@ -78,11 +78,11 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
                   Pricing
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -104,25 +104,25 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:info@zernords.com"
+                  href="mailto:zernordsitconsultant@gmail.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  info@zernords.com
+                  zernordsitconsultant@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+16394808857"
                   className="text-sm text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  +1 (234) 567-890
+                  +1 (639) 480-8857
                 </a>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  123 Tech Street, Digital City, DC 12345
+                  Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4, SK, Canada
                 </span>
               </li>
             </ul>
