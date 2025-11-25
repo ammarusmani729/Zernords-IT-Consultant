@@ -160,7 +160,7 @@ const Index = () => {
             ))}
           </div>
           
-          <div className="text-center">
+          {/*<div className="text-center">
             <Button asChild size="lg" variant="outline">
               <Link to="/portfolio" className="flex items-center">
                 View All Projects
@@ -168,6 +168,7 @@ const Index = () => {
               </Link>
             </Button>
           </div>
+          */}
         </div>
       </section>
 
@@ -215,7 +216,7 @@ const Index = () => {
               </p>
               <ul className="space-y-4">
                 {[
-                  "2+ years of industry expertise",
+                  "10+ years of industry expertise",
                   "International-level quality standards",
                   "Cutting-edge technology stack",
                   "Dedicated project management",

@@ -58,7 +58,7 @@ const About = () => {
   const faqs = [
     {
       question: "How long has Zernords been in business?",
-      answer: "Zernords IT Consultanct was founded in 2025 and has been delivering exceptional digital solutions for over 10 years. Our experience spans hundreds of successful projects across various industries.",
+      answer: "Zernords IT Consultant was founded in 2015 and has been delivering exceptional digital solutions for over 10 years. Our experience spans hundreds of successful projects across various industries.",
     },
     {
       question: "What makes Zernords different from other agencies?",
@@ -103,10 +103,10 @@ const About = () => {
                 Our <span className="text-primary">Story</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Founded in 2025, Zernords IT Consultanct started with a simple mission: to bridge the gap between innovative technology and real business needs. What began as a small team of dedicated developers has grown into a full-service digital agency serving clients globally.
+                Founded in 2015, Zernords IT Consultant started with a simple mission: to bridge the gap between innovative technology and real business needs. What began as a small team of dedicated developers has grown into a full-service digital agency serving clients globally.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Over the years, we've completed 20+ projects, helped 30+ clients achieve their digital goals, and built a reputation for excellence that speaks for itself. Our international-level standards and commitment to quality have made us a trusted partner for businesses of all sizes.
+                Over the years, we've completed 20+ projects, helped 20+ clients achieve their digital goals, and built a reputation for excellence that speaks for itself. Our international-level standards and commitment to quality have made us a trusted partner for businesses of all sizes.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Today, we continue to push boundaries, embrace new technologies, and deliver solutions that don't just meet expectations—they exceed them.

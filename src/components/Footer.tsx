@@ -63,11 +63,11 @@ const Footer = () => {
           <div>
             <h3 className="text-base font-bold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li>
+              {/* <li>
                 <Link to="/portfolio" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
                   Portfolio
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-smooth">
                   Services

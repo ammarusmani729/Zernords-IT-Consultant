@@ -48,19 +48,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@zernords.com",
-      link: "mailto:info@zernords.com",
+      content: "zernordsitconsultant@gmail.com",
+      link: "mailto:zernordsitconsultant@gmail.com",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (234) 567-890",
-      link: "tel:+1234567890",
+      content: "+1 (639) 480-8857",
+      link: "tel:+16394808857",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Tech Street, Digital City, DC 12345",
+      content: "Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4, SK, Canada",
       link: "#",
     },
   ];
@@ -223,7 +223,7 @@ const Contact = () => {
                 </h2>
                 <div className="aspect-square rounded-2xl overflow-hidden bg-muted mb-6">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596073366!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.3039929506576!2d-106.750705!3d52.1469811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f9d44e530001%3A0x1b23ad43d3c133f1!2s4151%2033rd%20St%20W%2C%20Saskatoon%2C%20SK%20S7R%200M4%2C%20Canada!5e0!3m2!1sen!2s!4v1764080543440!5m2!1sen!2s"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -234,12 +234,9 @@ const Contact = () => {
                   ></iframe>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    Our office is conveniently located in the heart of the tech district. Feel free to drop by for a coffee and chat about your project!
-                  </p>
                   <div className="flex items-center space-x-3 text-muted-foreground">
                     <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-sm">123 Tech Street, Digital City, DC 12345</span>
+                    <span className="text-sm">Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4, SK, Canada</span>
                   </div>
                 </div>
               </Card>
