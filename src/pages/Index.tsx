@@ -10,6 +10,7 @@ import CTASection from "@/components/CTASection";
 import Mock from "../assets/mock.png";
 import Mock2 from "../assets/mock2.png";
 import Mock3 from "../assets/mock3.png";
+import Main from "../assets/main-img.webp";
 
 import { 
   Code, Palette, Smartphone, Share2, Image as ImageIcon, 
@@ -238,7 +239,7 @@ const Index = () => {
             <div className="relative animate-slide-in-right">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-large">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                  src={Main}
                   alt="Team collaboration"
                   className="w-full h-full object-cover"
                 />
