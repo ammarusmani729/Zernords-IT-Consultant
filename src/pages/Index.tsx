@@ -29,7 +29,7 @@ const Index = () => {
     },
     {
       id: "dashboard",
-      title: "Mech Plus Duck Cleaning",
+      title: "Mech Plus Duct Cleaning",
       category: "Dashboard App",
       description: "Secure and user-friendly banking application with advanced features.",
       image: Mock2,  
