@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,8 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
+  // Formspree Hook
+  const [state, handleSubmit] = useForm("xpqjljpd");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,15 +21,11 @@ const Contact = () => {
     message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
+  // Success Toast + Reset Form
+  useEffect(() => {
+    if (state.succeeded) {
       toast.success("Message sent successfully! We'll get back to you soon.");
+
       setFormData({
         name: "",
         email: "",
@@ -33,11 +33,12 @@ const Contact = () => {
         subject: "",
         message: "",
       });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+    }
+  }, [state.succeeded]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -48,8 +49,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "zernordsitconsultant@gmail.com",
-      link: "mailto:zernordsitconsultant@gmail.com",
+      content: "info@zernordsitconsultant.com",
+      link: "mailto:info@zernordsitconsultant.com",
     },
     {
       icon: Phone,
@@ -60,7 +61,8 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4, SK, Canada",
+      content:
+        "Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4, SK, Canada",
       link: "#",
     },
   ];
@@ -68,7 +70,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 gradient-mesh">
         <div className="max-w-7xl mx-auto container-padding text-center">
@@ -76,14 +78,16 @@ const Contact = () => {
             Get In <span className="text-primary">Touch</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-            Ready to start your project? Contact us today and let's discuss how we can help transform your digital presence.
+            Ready to start your project? Contact us today and let's discuss how
+            we can help transform your digital presence.
           </p>
         </div>
       </section>
 
-      {/* Contact Info Cards */}
+      {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="max-w-7xl mx-auto container-padding">
+          {/* Contact Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactInfo.map((info, index) => (
               <Card
@@ -94,8 +98,14 @@ const Contact = () => {
                 <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-6">
                   <info.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{info.title}</h3>
-                {info.link.startsWith('http') || info.link.startsWith('mailto') || info.link.startsWith('tel') ? (
+
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {info.title}
+                </h3>
+
+                {info.link.startsWith("http") ||
+                info.link.startsWith("mailto") ||
+                info.link.startsWith("tel") ? (
                   <a
                     href={info.link}
                     className="text-muted-foreground hover:text-primary transition-smooth"
@@ -109,55 +119,65 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Contact Form & Map */}
+          {/* Form + Map */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Form */}
+            {/* FORM */}
             <div className="animate-slide-in-left">
               <Card className="p-8 glass">
                 <h2 className="text-3xl font-bold text-foreground mb-6">
                   Send Us a <span className="text-primary">Message</span>
                 </h2>
+
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Hidden Subject */}
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Website Inquiry - Arham Edits"
+                  />
+
+                  {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       Full Name *
                     </label>
                     <Input
-                      id="name"
                       name="name"
-                      type="text"
                       required
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full"
                     />
                   </div>
 
+                  {/* Email + Phone */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      <label className="block text-sm font-medium mb-2">
                         Email Address *
                       </label>
                       <Input
-                        id="email"
-                        name="email"
                         type="email"
+                        name="email"
                         required
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
                       />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                      />
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      <label className="block text-sm font-medium mb-2">
                         Phone Number
                       </label>
                       <Input
-                        id="phone"
-                        name="phone"
                         type="tel"
+                        name="phone"
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+1 (234) 567-890"
@@ -165,14 +185,13 @@ const Contact = () => {
                     </div>
                   </div>
 
+                  {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       Subject *
                     </label>
                     <Input
-                      id="subject"
                       name="subject"
-                      type="text"
                       required
                       value={formData.subject}
                       onChange={handleChange}
@@ -180,29 +199,35 @@ const Contact = () => {
                     />
                   </div>
 
+                  {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-sm font-medium mb-2">
                       Message *
                     </label>
                     <Textarea
-                      id="message"
                       name="message"
                       required
+                      rows={6}
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your project..."
-                      rows={6}
-                      className="w-full resize-none"
+                      className="resize-none"
+                    />
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
                     />
                   </div>
 
+                  {/* Submit */}
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                     className="w-full gradient-primary border-0 group"
                     size="lg"
                   >
-                    {isSubmitting ? (
+                    {state.submitting ? (
                       "Sending..."
                     ) : (
                       <>
@@ -215,29 +240,30 @@ const Contact = () => {
               </Card>
             </div>
 
-            {/* Map Placeholder */}
+            {/* MAP */}
             <div className="animate-slide-in-right">
               <Card className="p-8 glass h-full">
-                <h2 className="text-3xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl font-bold mb-6">
                   Visit Our <span className="text-primary">Office</span>
                 </h2>
+
                 <div className="aspect-square rounded-2xl overflow-hidden bg-muted mb-6">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.3039929506576!2d-106.750705!3d52.1469811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f9d44e530001%3A0x1b23ad43d3c133f1!2s4151%2033rd%20St%20W%2C%20Saskatoon%2C%20SK%20S7R%200M4%2C%20Canada!5e0!3m2!1sen!2s!4v1764080543440!5m2!1sen!2s"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen
                     loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
                     title="Office Location"
-                  ></iframe>
+                  />
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3 text-muted-foreground">
-                    <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-sm">Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4, SK, Canada</span>
-                  </div>
+
+                <div className="flex items-center space-x-3 text-muted-foreground text-sm">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span>
+                    Office Suite: 4151, 33Rd Street West, Saskatoon, S7R 0M4,
+                    SK, Canada
+                  </span>
                 </div>
               </Card>
             </div>

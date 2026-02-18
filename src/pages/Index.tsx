@@ -90,12 +90,8 @@ const Index = () => {
           <div className="absolute bottom-1/3 left-1/3 w-[500px] h-[500px] bg-primary-light/20 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto container-padding relative z-10">
+        <div className="max-w-7xl mx-auto container-padding relative z-10 mt-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass border border-primary/30 shadow-[0_0_20px_rgba(27,23,255,0.3)]">
-              <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-              <span className="text-sm font-medium bg-gradient-to-r from-primary to-primary-bright bg-clip-text text-transparent">International-Level Digital Agency</span>
-            </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               Transform Your Vision Into
