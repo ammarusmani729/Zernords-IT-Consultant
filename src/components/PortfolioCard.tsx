@@ -50,6 +50,7 @@ const PortfolioCard = ({ id, title, category, description, image, video, tags, v
             <img
               src={image}
               alt={title}
+              loading="lazy"
               className="w-full h-full object-cover group-hover:scale-105 transition-smooth duration-500"
             />
           )}
@@ -90,6 +91,7 @@ const PortfolioCard = ({ id, title, category, description, image, video, tags, v
           <DialogContent className="max-w-sm w-full aspect-video bg-black border-none p-0">
             <video
               src={video}
+              preload="metadata"
               controls
               autoPlay
               className="w-full h-full"
