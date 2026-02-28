@@ -7,9 +7,15 @@ import PortfolioCard from "@/components/PortfolioCard";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import CTASection from "@/components/CTASection";
-import Mock from "../assets/mock.png";
-import Mock2 from "../assets/mock2.png";
-import Mock3 from "../assets/mock3.png";
+// portfolio preview assets
+import Mechplus from "../assets/Website Mockups/mechplus.svg";
+import Iboothme from "../assets/Website Mockups/iboothme.svg";
+import Faster from "../assets/E-com Mockups/faster.svg";
+
+// branding/social previews
+import MaxiorCard from "../assets/Cards Mockups/maxior.svg";
+import MechplusCard from "../assets/Cards Mockups/mechplus.svg";
+import MaxiorSM from "../assets/Social Medias Mockups/maxior.svg";
 import Main from "../assets/main-img.webp";
 
 import { 
@@ -18,32 +24,50 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  // show exactly six featured items (two rows of two columns on desktop)
   const portfolioProjects = [
+    // first row: three clickable websites
     {
-      id: "ecommerce",
-      title: "Maxior E-Commerce Platform",
-      category: "E-Commerce",
-      description: "A cutting-edge online shopping experience with seamless checkout and inventory management.",
-      image: Mock3,
-      tags: ["Shopify"],
+      id: "mechplus-site",
+      category: "Web Development",
+      image: Mechplus,
+      variant: "image-link",
+      link: "https://mechplustc.com/",
     },
     {
-      id: "dashboard",
-      title: "Mech Plus Duct Cleaning",
-      category: "Dashboard App",
-      description: "Secure and user-friendly banking application with advanced features.",
-      image: Mock2,  
-      tags: ["Elementor", "WordPress"],
+      id: "iboothme-site",
+      category: "Web Development",
+      image: Iboothme,
+      variant: "image-link",
+      link: "https://ae.iboothme.com/",
     },
     {
-      id: "portfolio website",
-      title: "Mech Plus Trading & Consultancy",
-      category: "Website",
-      description: "Real-time analytics platform with intuitive data visualization and reporting.",
-      image: Mock,
-      tags: ["WordPress", "Slider"],
+      id: "faster-site",
+      category: "Web Development",
+      image: Faster,
+      variant: "image-link",
+      link: "https://www.fastercars.ae/",
     },
-    
+
+    // second row: three branding/social images (not clickable)
+    {
+      id: "maxior-card",
+      category: "Branding",
+      image: MaxiorCard,
+      variant: "image-only",
+    },
+    {
+      id: "mechplus-card",
+      category: "Branding",
+      image: MechplusCard,
+      variant: "image-only",
+    },
+    {
+      id: "maxior-sm",
+      category: "Social Media",
+      image: MaxiorSM,
+      variant: "image-only",
+    },
   ];
 
   const services = [
@@ -149,7 +173,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {portfolioProjects.map((project, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <PortfolioCard {...project} />
@@ -157,15 +181,14 @@ const Index = () => {
             ))}
           </div>
           
-          {/*<div className="text-center">
+          <div className="text-center">
             <Button asChild size="lg" variant="outline">
               <Link to="/portfolio" className="flex items-center">
-                View All Projects
+                View More
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           </div>
-          */}
         </div>
       </section>
 
