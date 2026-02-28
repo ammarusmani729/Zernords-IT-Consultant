@@ -13,7 +13,7 @@ interface PortfolioCardProps {
   image?: string;
   video?: string;
   tags?: string[];
-  variant?: "default" | "image-link" | "image-only" | "video-only";
+  variant?: "default" | "image-link" | "image-only" | "video-only" | string;
   link?: string;
 }
 
