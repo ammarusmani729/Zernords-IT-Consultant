@@ -8,14 +8,14 @@ import ServiceCard from "@/components/ServiceCard";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import CTASection from "@/components/CTASection";
 // portfolio preview assets
-import Mechplus from "../assets/Website Mockups/mechplus.svg";
-import Iboothme from "../assets/Website Mockups/iboothme.svg";
-import Faster from "../assets/E-com Mockups/faster.svg";
+import Mechplus from "../assets/Website Mockups/mechplus.jpg";
+import Iboothme from "../assets/Website Mockups/iboothme.jpg";
+import Faster from "../assets/E-com Mockups/faster.jpg";
 
 // branding/social previews
-import MaxiorCard from "../assets/Cards Mockups/maxior.svg";
-import MechplusCard from "../assets/Cards Mockups/mechplus.svg";
-import MaxiorSM from "../assets/Social Medias Mockups/maxior.svg";
+import MaxiorCard from "../assets/Cards Mockups/maxior.jpg";
+import MechplusCard from "../assets/Cards Mockups/mechplus.jpg";
+import MaxiorSM from "../assets/Social Medias Mockups/maxior.jpg";
 import Main from "../assets/main-img.webp";
 
 import { 

@@ -3,27 +3,28 @@ import Footer from "@/components/Footer";
 import PortfolioCard from "@/components/PortfolioCard";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Mechplus from "../assets/Website Mockups/mechplus.svg";
-import DaneshExchange from "../assets/Website Mockups/danesh_exchange.svg";
-import IAX from "../assets/Website Mockups/iax.svg";
-import Iboothme from "../assets/Website Mockups/iboothme.svg";
-import MechplusDuct from "../assets/Website Mockups/mechplus_duct.svg";
-import Spencer from "../assets/Website Mockups/spencer.svg";
-import Dress4Less from "../assets/E-com Mockups/dress4less.svg";
-import Fab from "../assets/E-com Mockups/fab.svg";
-import Faster from "../assets/E-com Mockups/faster.svg";
-import Muzikkon from "../assets/E-com Mockups/muzikkon.svg";
-import ShopArcade from "../assets/E-com Mockups/shop_arcade.svg";
-import TabletHire from "../assets/E-com Mockups/tablet_hire.svg";
-import Vivid from "../assets/E-com Mockups/vivid.svg";
-import MaxiorCard from "../assets/Cards Mockups/maxior.svg";
-import MechplusCard from "../assets/Cards Mockups/mechplus.svg";
-import MechplusDuctCard from "../assets/Cards Mockups/mechplus_duct.svg";
-import MSEnterpriseCard from "../assets/Cards Mockups/ms_enterprise.svg";
-import AllAboutCellSM from "../assets/Social Medias Mockups/allaboutcell.svg";
-import MaxiorSM from "../assets/Social Medias Mockups/maxior.svg";
-import MechplusSM from "../assets/Social Medias Mockups/mechplus.svg";
-import MechplusDuctSM from "../assets/Social Medias Mockups/mechplus_duct.svg";
+import Mechplus from "../assets/Website Mockups/mechplus.jpg";
+import DaneshExchange from "../assets/Website Mockups/danesh_exchange.jpg";
+import IAX from "../assets/Website Mockups/iax.jpg";
+import Iboothme from "../assets/Website Mockups/iboothme.jpg";
+import MechplusDuct from "../assets/Website Mockups/mechplus_duct.jpg";
+import Spencer from "../assets/Website Mockups/spencer.jpg";
+import Dress4Less from "../assets/E-com Mockups/dress4less.jpg";
+import Fab from "../assets/E-com Mockups/fab.jpg";
+import Faster from "../assets/E-com Mockups/faster.jpg";
+import Muzikkon from "../assets/E-com Mockups/muzikkon.jpg";
+import ShopArcade from "../assets/E-com Mockups/shop_arcade.jpg";
+import TabletHire from "../assets/E-com Mockups/tablet_hire.jpg";
+import Vivid from "../assets/E-com Mockups/vivid.jpg";
+import MaxiorCard from "../assets/Cards Mockups/maxior.jpg";
+import MechplusCard from "../assets/Cards Mockups/mechplus.jpg";
+import MechplusDuctCard from "../assets/Cards Mockups/mechplus_duct.jpg";
+import MSEnterpriseCard from "../assets/Cards Mockups/ms_enterprise.jpg";
+import AllAboutCellSM from "../assets/Social Medias Mockups/allaboutcell.jpg";
+import MaxiorSM from "../assets/Social Medias Mockups/maxior.jpg";
+import MechplusSM from "../assets/Social Medias Mockups/mechplus.jpg";
+import MechplusDuctSM from "../assets/Social Medias Mockups/mechplus_duct.jpg";
+import BijliBuddy from "../assets/App Mockups/bijlibuddy.jpeg";
 import Video1 from "../assets/Video Mockups/1.mp4";
 import Video2 from "../assets/Video Mockups/2.mp4";
 import Video3 from "../assets/Video Mockups/3.mp4";
@@ -37,7 +38,7 @@ import Video8 from "../assets/Video Mockups/8.mp4";
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const categories = ["All", "Web Development", "E-Commerce", "Branding", "Social Media", "Video Editing"];
+  const categories = ["All", "Web Development", "E-Commerce","App Development", "Branding", "Social Media", "Video Editing"];
 
   const projects = [
     {
@@ -130,6 +131,12 @@ const Portfolio = () => {
       image: Vivid,
       variant: "image-link",
       link: "https://www.vividads.com.au/",
+    },
+    {
+      id: "2",
+      category: "App Development",
+      image: BijliBuddy,
+      variant: "image-only",
     },
     {
       id: "2",
